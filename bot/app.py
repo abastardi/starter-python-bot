@@ -21,7 +21,7 @@ if __name__ == "__main__":
     logging.info("token: {}".format(slack_token))
 
     if slack_token == "":
-        logging.info("SLACK_TOKEN env var not set, expecting token to be provided by Resourcer events")
+        logging.info("SLACK_TOKEN env var not set, expecting token to be provided by Resourcer events. YOLO")
         slack_token = None
         botManager = bot_manager.BotManager(spawn_bot)
         res = resourcer.Resourcer(botManager)
