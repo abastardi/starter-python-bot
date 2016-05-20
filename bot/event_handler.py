@@ -23,17 +23,17 @@ class RtmEventHandler(object):
         elif event_type == 'message':
             # message was sent to channel
             #self._handle_message(event)
-            self._mtveng_1(event['channel'])
+            self._mtveng(event)
         elif event_type == 'channel_joined':
             # you joined a channel
-            self._mtveng_1(event['channel'])
+            self._mtveng_1(event)
             #self.msg_writer.write_help_message(event['channel'])
         elif event_type == 'group_joined':
             # you joined a private group
             self.msg_writer.write_help_message(event['channel'])
         else:
             pass
-    def _mtveng_1(self, event):
+    def _mtveng(self, event):
         self.msg_writer.msg_restaurant_query(event['channel']) 
 
     def _handle_message(self, event):
