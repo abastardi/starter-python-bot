@@ -20,7 +20,7 @@ class Messenger(object):
         txt = "Hi, my name is Ollie. I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
         self.send_message(channel_id, txt)
         self.clients.send_user_typing_pause(channel_id)
-        txt = "http://www.yelp.com/search?find_desc=Best+Restaurants&find_loc=Duluth%2C+MN"
+        txt = "http://www.yelp.com/search?find_desc=Best+Restaurants&find_loc=Duluth+MN"
         self.send_message(channel_id, txt)
         txt = "How do you like me now?"
         #asks for feedback
