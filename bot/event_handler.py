@@ -22,8 +22,7 @@ class RtmEventHandler(object):
             self.msg_writer.write_error(event['channel'], json.dumps(event))
         elif event_type == 'message':
             # message was sent to channel
-            #self._handle_message(event)
-            self._mtveng(event)
+            self._handle_message(event)
         elif event_type == 'channel_joined':
             # you joined a channel
             self._mtveng_1(event)
