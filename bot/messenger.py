@@ -16,6 +16,16 @@ class Messenger(object):
         channel = self.clients.rtm.server.channels.find(channel_id)
         channel.send_message("{}".format(msg.encode('ascii', 'ignore')))
 
+    def msg_restaurant_query(self, channel_if, msg):
+        txt = "Hi, my name is Ollie. I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
+        self.send_message(channel_id, txt)
+        self.clients.send_user_typing_pause(channel_id)
+        txt = "http://www.yelp.com/search?find_desc=Best+Restaurants&find_loc=Duluth%2C+MN"
+        self.send_message(channel_id, txt)
+        txt = "How do you like me now?"
+        #asks for feedback
+        self.send_message(channel_id, txt)
+
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
         txt = '{}\n{}\n{}\n{}'.format(
