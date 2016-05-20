@@ -34,8 +34,7 @@ class RtmEventHandler(object):
         else:
             pass
     def _mtveng_1(self, event):
-        self.msg_restaurant_query(event['channel'])
-
+        self.msg_writer.msg_restaurant_query(event['channel']) 
 
     def _handle_message(self, event):
         # Filter out messages from the bot itself
