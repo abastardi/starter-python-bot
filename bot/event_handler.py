@@ -52,6 +52,6 @@ class RtmEventHandler(object):
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
                 elif 'restaurant' in msg_txt:
-                    self.msg_restaurant_query(event['channel'])
+                    self.msg_writer.msg_restaurant_query(event['channel'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
