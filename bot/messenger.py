@@ -19,16 +19,16 @@ class Messenger(object):
         channel.send_message("{}".format(msg.encode('ascii', 'ignore')))
 
     def msg_restaurant_query(self, channel_id, user_id):
-        txt = "Hi, my name is Ollie."
+        intro = "Hi, my name is Ollie."
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
-        self.send_message(channel_id, txt)
+        self.send_message(channel_id, intro)
         self.clients.send_user_typing_pause(channel_id)
-        txt = "http://www.yelp.com/search?find_desc=Best+Restaurants&find_loc=Duluth+MN"
-        self.send_message(channel_id, txt)
-        txt = "How do you like me now?"
+        link = "http://www.yelp.com/search?find_desc=Best+Restaurants&find_loc=Duluth+MN"
+        self.send_message(channel_id, link)
+        feedback_request = "How do you like me now?"
         #asks for feedback
-        self.send_message(channel_id, txt)
-        sys.exit()
+        self.send_message(channel_id, feedback_request)
+       
 
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
