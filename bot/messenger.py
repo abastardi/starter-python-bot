@@ -1,5 +1,7 @@
 import logging
 import random
+import sys
+
 
 logger = logging.getLogger(__name__)
 
@@ -26,8 +28,7 @@ class Messenger(object):
         txt = "How do you like me now?"
         #asks for feedback
         self.send_message(channel_id, txt)
-        return 
-
+        sys.exit()
 
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
