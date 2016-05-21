@@ -27,7 +27,7 @@ class Messenger(object):
         #asks for feedback
         self.send_message(channel_id, txt)
         return 
-        
+
 
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()

@@ -8,7 +8,6 @@ from event_handler import RtmEventHandler
 
 logger = logging.getLogger(__name__)
 
-
 def spawn_bot():
     return SlackBot()
 
