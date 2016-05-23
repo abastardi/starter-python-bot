@@ -44,12 +44,14 @@ class Messenger(object):
         txt = '{}\n{}\n{}'.format(
             "I'm your friendly Slack bot written in Python.  I'll *_respond_* to the following commands:",
             "> `hi <@" + bot_uid + ">` - I'll introduce myself.",
-            "> `<@" + bot_uid + "> restaurant` - I'll help you find a restaurant :knife_fork_plate:",
+            "> `<@" + bot_uid + "> restaurant` - I'll help you find a restaurant :knife_fork_plate:")
             #"> `<@" + bot_uid + "> joke` - I'll tell you one of my finest jokes, with a typing pause for effect. :laughing:",
             #"> `<@" + bot_uid + "> attachment` - I'll demo a post with an attachment using the Web API. :paperclip:")
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
+
+        (
         greetings = "Hi "
         give_name = " my name is Ollie." 
         intro = "I'm here to help you find a restaurant nearby"
