@@ -26,7 +26,7 @@ class Messenger(object):
         self.send_message(channel_id, intro)
         self.clients.send_user_long_typing_pause(channel_id)
         restaurant_info = '{}\n>>>{}\n{}\n{}'.format( 
-            "How about MW Restaurant, located at:",
+            "How about *Michelle's Hawaiian Grill*, located at:",
             "1538 Kapiolani Blvd",
             "Suite 107",
             "Honolulu, HI 96814")
@@ -35,11 +35,11 @@ class Messenger(object):
             "image_url": "../resources/poke_nachos.jpg",
         }
         self.clients.web.chat.post_message(channel_id, attachments=[attachment], as_user='true')
-        self.clients.send_user_short_typing_pause(channel_id)
-        feedback_request = "How do you like my service?"
+        self.clients.send_user_typing_pause(channel_id)
+        #feedback_request = "How do you like my service?"
         #asks for feedback
-        self.send_message(channel_id, feedback_request)
-        send_off = "Your task inside Slack is now finished - Please return to SurveyGizmo."
+        #self.send_message(channel_id, feedback_request)
+        send_off = "Your task inside Slack is now finished - Please return to the survey to complete your HIT."
         #asks for feedback
         self.send_message(channel_id, send_off)
 
