@@ -25,7 +25,7 @@ class Messenger(object):
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
         self.send_message(channel_id, intro)
         self.clients.send_user_long_typing_pause(channel_id)
-        restaurant_info = '{}\n{}\n{}\n{}'.format( 
+        restaurant_info = '>>>{}\n{}\n{}\n{}'.format( 
             "How about MW Restaurant, located at:",
             "1538 Kapiolani Blvd",
             "Suite 107",
