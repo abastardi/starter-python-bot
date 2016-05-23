@@ -19,8 +19,7 @@ class Messenger(object):
         channel.send_message("{}".format(msg.encode('ascii', 'ignore')))
 
     def msg_restaurant_query(self, channel_id, user_id):
-        intro = '{}\n{}\n{}'.format(
-            "Hi, my name is Ollie. I'm here to help you find a restaurant nearby.", 
+        intro = '{}\n{}'.format( 
             "When you give me a zip code, I'll tell you about a restaurant that's close to you.",
             "What zip code would you like to search?")
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
@@ -45,8 +44,8 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = ['Hi', 'Hello', 'Nice to meet you', 'Howdy', 'Salutations']
-        txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
+        greetings = "Hi, my name is Ollie. I'm here to help you find a restaurant nearby."
+        txt = '{}, <@{}>!'.format(greetings, user_id)
         self.send_message(channel_id, txt)
 
     def write_prompt(self, channel_id):
