@@ -31,6 +31,10 @@ class Messenger(object):
             "Suite 107",
             "Honolulu, HI 96814")
         self.send_message(channel_id, restaurant_info)
+        attachment = {
+            "image_url": "../resources/poke_nachos.jpg",
+        }
+        self.clients.web.chat.post_message(channel_id, attachments=[attachment], as_user='true')
         self.clients.send_user_short_typing_pause(channel_id)
         feedback_request = "How do you like my service?"
         #asks for feedback
