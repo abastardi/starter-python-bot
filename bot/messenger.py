@@ -25,9 +25,9 @@ class Messenger(object):
         self.clients.send_user_typing_pause(channel_id)
         link = "<http://www.yelp.com/search?find_desc=Best+Restaurants&find_loc=Duluth+MN/>"
         self.send_message(channel_id, link)
-        #feedback_request = "How do you like me now?"
+        feedback_request = "How do you like me now?"
         #asks for feedback
-        #self.send_message(channel_id, feedback_request)
+        self.send_message(channel_id, feedback_request)
        
 
     def write_help_message(self, channel_id):
