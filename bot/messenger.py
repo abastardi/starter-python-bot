@@ -50,8 +50,6 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-
-        (
         greetings = "Hi "
         give_name = " my name is Ollie." 
         intro = "I'm here to help you find a restaurant nearby"
