@@ -19,7 +19,10 @@ class Messenger(object):
         channel.send_message("{}".format(msg.encode('ascii', 'ignore')))
 
     def msg_restaurant_query(self, channel_id, user_id):
-        intro = "Hi, my name is Ollie."
+        intro = '{}\n{}\n{}'.format(
+            "Hi, my name is Ollie. I'm here to help you find a restaurant nearby.", 
+            "When you give me a zip code, I'll tell you about a restaurant that's close to you.",
+            "What zip code would you like to search?"
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
         self.send_message(channel_id, intro)
         self.clients.send_user_typing_pause(channel_id)
