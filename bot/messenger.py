@@ -25,9 +25,15 @@ class Messenger(object):
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
         self.send_message(channel_id, intro)
         self.clients.send_user_long_typing_pause(channel_id)
-        link = "<http://www.yelp.com/search?find_desc=Best+Restaurants&find_loc=Duluth+MN/>"
-        self.send_message(channel_id, link)
-        feedback_request = "How do you like me now?"
+        restaurant_info = '{}\n{}\n{}\n{}'.format( 
+            "How about MW Restaurant, located at:",
+            "1538 Kapiolani Blvd",
+            "Suite 107",
+            "Honolulu, HI 96814")
+        self.send_message(channel_id, restaurant_info)
+        self.clients.send_user_short_typing_pause(channel_id)
+        self.send_message()
+        feedback_request = "How do you like my service?"
         #asks for feedback
         self.send_message(channel_id, feedback_request)
         send_off = "Your task inside Slack is now finished - Please return to SurveyGizmo."
