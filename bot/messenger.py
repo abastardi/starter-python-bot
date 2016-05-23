@@ -32,7 +32,6 @@ class Messenger(object):
             "Honolulu, HI 96814")
         self.send_message(channel_id, restaurant_info)
         self.clients.send_user_short_typing_pause(channel_id)
-        self.send_message()
         feedback_request = "How do you like my service?"
         #asks for feedback
         self.send_message(channel_id, feedback_request)
@@ -50,8 +49,10 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = "Hi, my name is Ollie. I'm here to help you find a restaurant nearby."
-        txt = '{}, <@{}>!'.format(greetings, user_id)
+        greetings = "Hi, "
+        give_name = "my name is Ollie." 
+        intro = "I'm here to help you find a restaurant nearby"
+        txt = '{}, <@{}>!,{}\n{}'.format(greetings, user_id, give_name, intro)
         self.send_message(channel_id, txt)
 
     def write_prompt(self, channel_id):
