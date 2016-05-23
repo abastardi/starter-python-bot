@@ -41,7 +41,7 @@ class Messenger(object):
 
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        txt = '{}\n{}\n{}\n{}'.format(
+        txt = '{}\n{}\n{}'.format(
             "I'm your friendly Slack bot written in Python.  I'll *_respond_* to the following commands:",
             "> `hi <@" + bot_uid + ">` - I'll introduce myself.",
             "> `<@" + bot_uid + "> restaurant` - I'll help you find a restaurant :knife_fork_plate:",
