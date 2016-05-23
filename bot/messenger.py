@@ -31,7 +31,7 @@ class Messenger(object):
         feedback_request = "How do you like me now?"
         #asks for feedback
         self.send_message(channel_id, feedback_request)
-        send_off = "Your task inside Slack is now finished - Please click this link to answer a few survey questions in order to get credit."
+        send_off = "Your task inside Slack is now finished - Please return to SurveyGizmo."
         #asks for feedback
         self.send_message(channel_id, send_off)
 
