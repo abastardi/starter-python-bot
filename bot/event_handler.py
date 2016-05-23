@@ -51,7 +51,7 @@ class RtmEventHandler(object):
                     self.msg_writer.write_joke(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
-                #elif 'restaurant' in msg_txt:
-                #    self.msg_writer.msg_restaurant_query(event['channel'], event['user'])
+                elif 'restaurant' in msg_txt:
+                    self.msg_writer.msg_restaurant_query(event['channel'], event['user'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
