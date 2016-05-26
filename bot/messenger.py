@@ -20,7 +20,7 @@ class Messenger(object):
 
     def msg_restaurant_query(self, channel_id, user_id):
         intro = '{}\n{}'.format( 
-            "I’m your friendly chatbot here to help you find a restaurant.",
+            "I am your friendly chatbot here to help you find a restaurant.",
             "What kind of food would you like to eat?")
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
         self.send_message(channel_id, intro)
