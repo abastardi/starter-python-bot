@@ -2,7 +2,7 @@ import json
 import logging
 import re
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__) 
 
 
 class RtmEventHandler(object):
@@ -54,4 +54,5 @@ class RtmEventHandler(object):
                 elif 'restaurant' in msg_txt:
                     self.msg_writer.msg_restaurant_query(event['channel'], event['user'])
                 else:
-                    self.msg_writer.write_prompt(event['channel'])
+                    pass 
+                    #self.msg_writer.write_prompt(event['channel'])

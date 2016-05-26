@@ -20,9 +20,10 @@ class Messenger(object):
 
     def msg_restaurant_query(self, channel_id, user_id):
         intro = '{}\n{}'.format( 
-            "I am your friendly chatbot here to help you find a restaurant.",
+            "I am your friendly chatbot here to help you find a restaurant.", #new help message
             "How can I help?")
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
+
         self.send_message(channel_id, intro)
         self.clients.send_user_long_typing_pause(channel_id)
         zip_code_request = '{}\n{}'.format( 
@@ -41,13 +42,13 @@ class Messenger(object):
         send_off = "Your task inside Slack is now finished - Please return to the survey to complete your HIT."
         #asks for feedback
         self.send_message(channel_id, send_off)
+        
 
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        txt = '{}\n{}\n{}'.format(
-            "I'm your friendly Slack bot written in Python.  I'll *_respond_* to the following commands:",
-            "> `hi <@" + bot_uid + ">` - I'll introduce myself.",
-            "> `<@" + bot_uid + "> restaurant` - I'll help you find a restaurant :knife_fork_plate:")
+        txt = '{}\n{}'.format(
+            "I am your friendly chatbot here to help you find a restaurant.",
+            "say 'restaurant' if you want help finding one.")
             #"> `<@" + bot_uid + "> joke` - I'll tell you one of my finest jokes, with a typing pause for effect. :laughing:",
             #"> `<@" + bot_uid + "> attachment` - I'll demo a post with an attachment using the Web API. :paperclip:")
         self.send_message(channel_id, txt)
@@ -55,7 +56,7 @@ class Messenger(object):
     def write_greeting(self, channel_id, user_id):
         greetings = "Hi "
         give_name = " my name is Ollie." 
-        intro = "I'm here to help you find a restaurant nearby"
+        intro = "I'm here to help you find a restaurant nearby say 'restaurant' if you want help finding one."
         txt = '{}<@{}>{}\n{}'.format(greetings, user_id, give_name, intro)
         self.send_message(channel_id, txt)
 
