@@ -20,10 +20,16 @@ class Messenger(object):
 
     def msg_restaurant_query(self, channel_id, user_id):
         intro = '{}\n{}'.format( 
-            "When you give me a zip code, I'll tell you about a restaurant that's close to you.",
-            "What zip code would you like to search?")
+            "I’m your friendly chatbot here to help you find a restaurant.",
+            "What kind of food would you like to eat?")
         # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
         self.send_message(channel_id, intro)
+        self.clients.send_user_long_typing_pause(channel_id)
+        zip_code_request = '{}\n{}'.format( 
+            "Sounds yummy!",
+            "What is your zip code?")
+        # I'm here to help you find a restaurant nearby. When you give me a zip code, I'll tell you about a restaurant that's close to you. What zip code would you like to search?"
+        self.send_message(channel_id, zip_code_request)
         self.clients.send_user_long_typing_pause(channel_id)
         restaurant_info = '{}\n>>>{}\n{}\n{}'.format( 
             "How about *Michelle's Hawaiian Grill*, located at:",
