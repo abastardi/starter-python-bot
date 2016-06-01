@@ -9,7 +9,7 @@ config:
     default: DEBUG
   - name: SECRET
     friendly_name: Shhhh
-    info: This is an secret option
+    info: This is a super secret option
     type: secret
     default: not secret though
 screenshots:
