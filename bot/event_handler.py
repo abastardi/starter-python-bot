@@ -32,27 +32,22 @@ class RtmEventHandler(object):
             self.msg_writer.write_help_message(event['channel'])
         else:
             pass
-    def _mtveng(self, event):
-        self.msg_writer.msg_restaurant_query(event['channel']) 
 
     def _handle_message(self, event):
         # Filter out messages from the bot itself
         if not self.clients.is_message_from_me(event['user']):
-
             msg_txt = event['text']
-
-            if self.clients.is_bot_mention(msg_txt):
-                # e.g. user typed: "@pybot tell me a joke!"
-                if 'help' in msg_txt:
-                    self.msg_writer.write_help_message(event['channel'])
-                elif re.search('hi|hey|hello|howdy', msg_txt):
-                    self.msg_writer.write_greeting(event['channel'], event['user'])
-                elif 'joke' in msg_txt:
-                    self.msg_writer.write_joke(event['channel'])
-                elif 'attachment' in msg_txt:
-                    self.msg_writer.demo_attachment(event['channel'])
-                elif 'restaurant' in msg_txt:
-                    self.msg_writer.msg_restaurant_query(event['channel'], event['user'])
-                else:
-                    pass 
-                    #self.msg_writer.write_prompt(event['channel'])
+            # e.g. user typed: "@pybot tell me a joke!"
+            if 'help' in msg_txt:
+                self.msg_writer.write_help_message(event['channel'])
+            elif re.search('hi|hey|hello|howdy', msg_txt):
+                self.msg_writer.write_greeting(event['channel'], event['user'])
+            elif 'joke' in msg_txt:
+                self.msg_writer.write_joke(event['channel'])
+            elif 'attachment' in msg_txt:
+                self.msg_writer.demo_attachment(event['channel'])
+            elif 'restaurant' in msg_txt:
+                self.msg_writer.msg_restaurant_query(event['channel'], event['user'])
+            else:
+                pass 
+                #self.msg_writer.write_prompt(event['channel'])

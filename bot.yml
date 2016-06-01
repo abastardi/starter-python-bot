@@ -1,5 +1,5 @@
 name: Ollie_bot
-description: A simple Python bot sample for Beep Boop
+description: A simple Python bot for Beep Boop
 avatar: resources/avatar.png
 background: resources/background.png
 config:
@@ -7,10 +7,5 @@ config:
     friendly_name: Severity level to show for logging.
     info: See https://docs.python.org/2/library/logging.html#levels
     default: DEBUG
-  - name: SECRET
-    friendly_name: Shhhh
-    info: This is a super secret option
-    type: secret
-    default: not secret though
 screenshots:
   - screenshot: resources/screenshot1.png

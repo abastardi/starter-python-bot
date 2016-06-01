@@ -27,14 +27,13 @@ class SlackClients(object):
 
     def is_bot_mention(self, message):
         bot_user_name = self.rtm.server.login_data['self']['id']
-        if re.search("@{}".format(bot_user_name), message):
-            return True
-        else:
-            return True
+        return True if re.search("@{}".format(bot_user_name), message) else False
+
     def send_user_long_typing_pause(self, channel_id, sleep_time=9.0):
         user_typing_json = {"type": "typing", "channel": channel_id}
         self.rtm.server.send_to_websocket(user_typing_json)
         time.sleep(sleep_time)
+
     def send_user_short_typing_pause(self, channel_id, sleep_time=1.0):
         user_typing_json = {"type": "typing", "channel": channel_id}
         self.rtm.server.send_to_websocket(user_typing_json)
